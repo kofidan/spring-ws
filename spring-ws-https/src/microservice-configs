@@ -1,0 +1,112 @@
+spring.application.name=airtime-service
+spring.cloud.config.server.git.uri=C:/Dev/Kofidan/cpay/dev/deploy/clickpay-microservices/cfg
+###
+# The Base Application Configuration File
+###
+
+###
+# Profile Configuration
+#  available profiles: utilConfig
+###
+spring.profiles.active=vas
+
+###
+# Data Source Configuration
+###
+spring.datasource.url=jdbc:mysql://127.0.0.1:3306/clickpay
+spring.datasource.username=clickpayuser
+spring.datasource.password=5097iAjmZd
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+
+# Pool
+spring.datasource.initial-size=10
+spring.datasource.max-active=100
+spring.datasource.min-idle=5
+spring.datasource.max-idle=5
+
+spring.datasource.test-on-borrow=true
+spring.datasource.validation-query=select 1;
+
+spring.datasource.time-between-eviction-runs-millis=60000
+spring.datasource.min-evictable-idle-time-millis=300000
+
+spring.jpa.properties.hibernate.show_sql=true
+spring.jpa.properties.hibernate.use_sql_comments=true
+spring.jpa.properties.hibernate.format_sql=true
+
+
+#spring.jpa.properties.hibernate.hbm2ddl.auto=create
+server.port: 9030
+management.port: 9031
+management.address: 127.0.0.1
+
+
+###
+# Actuator Configuration
+###
+endpoints.health.id=status
+endpoints.health.sensitive=false
+
+endpoints.shutdown.enabled=true
+endpoints.shutdown.sensitive=false
+
+management.context-path=/heartbeat
+management.security.roles=SYSADMIN
+
+
+###
+# Spring Security Configuration
+###
+security.user.name=clickpayMobile
+security.user.password=d18b9b6d-678w-4a87-b25a-bf6f47ug443a
+security.user.role=USER,SYSADMIN
+
+
+
+#logging.level.org.springframework.web=INFO
+#logging.level.guru.springframework.controllers=DEBUG
+#logging.level.org.hibernate=ERROR
+logging.file=logs/clickpay-vas.log
+
+
+
+
+
+
+#One4All Airtime Configuration
+topup.endpoint=https://tpp.one4all.com.gh/TPP/TopUpApi
+topup.username=ZLRKHAP7IABTYXX2FKC2
+topup.pin=INUY3H16HDP1YEXWABBT
+topup.service=001
+
+
+#eTranzact FundGate Configuration
+etranzact.terminal=0120000041
+etranzact.pin=V3bf/8zzDuE+lw+99Nt6yQ==
+etranzact.products="DSTV|GOTV|ADSL|VPP|SURFLINE|SINGLE"
+
+AIRTIME=MTN|VODAFONE|AIRTEL|TIGO|GLO|EXPRESSO
+BILL=DSTV|GOTV|ADSL|VPP|SURFLINE|SINGLE|WAECPIN
+SCHOOL=REGENT|WISCONSIN
+DONATION=LIGHTHOUSE|PREMPEH
+
+
+gbc.tv.endpoint=http://216.55.182.220:8010/api
+gbc.tv.apikey=test-etranzact
+
+waec.pin.endpoint=https://pin.one4all.com.gh/api/v1
+waec.pin.apikey=57dc0c63-458c-45d5-98eb-53b1ac1f14ae
+waec.pin.apisecret=820f1553
+
+#hubtel.endpoint=https://api.smsgh.com/vend/usp
+hubtel.endpoint=https://api.hubtel.com/vend
+hubtel.clientId=dqdbkpmt
+hubtel.clientSecret=zrfknvwh
+hubtel.token=c4d936dd-ac9d-4b0e-b88a-f1251c25390f
+
+#hubtel.endpoint=https://api.smsgh.com/vend/usp
+#hubtel.endpoint=https://api.hubtel.com/vend
+#hubtel.clientId=eianukmf
+#hubtel.clientSecret=xfumtceb
+#hubtel.token=d238bfc2-5ca2-4f68-b508-71f08784130e
+
